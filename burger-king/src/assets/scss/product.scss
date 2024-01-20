@@ -1,0 +1,128 @@
+.categories {
+  display: flex;
+  &__search {
+    background-color: #ed7801;
+    border: none;
+    width: 12%;
+    margin: 10px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  &__mobile {
+    width: 84%;
+    margin: 10px;
+    font: 18px / 22px "Flame-Regular";
+    background-color: #faaf18;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    z-index: 499;
+  }
+
+  //   after click
+  &__after {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    gap: 5px;
+    z-index: 500;
+    height: 100%;
+    opacity: 1;
+    padding: 80px 20px;
+    position: fixed;
+    background: #2d2d2d;
+
+    & button {
+      width: 100%;
+      margin: auto;
+      padding: 5px 12px 7px;
+      background-color: #8b542f;
+      color: #502314;
+      font-family: "Flame-Regular";
+      text-transform: capitalize;
+      min-height: 36px;
+      align-items: center;
+      border-radius: 10px;
+    }
+  }
+}
+
+.product {
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;
+  margin: 0px 0px 10px;
+  padding: 8px 10px;
+  gap: 10px;
+
+  &__card {
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: baseline;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 15px -4px #6b6b6b;
+    gap: 5px;
+
+    & img {
+      width: 28%;
+      margin-right: 2%;
+      padding: 6px;
+      object-fit: cover;
+    }
+
+    &--title {
+      line-height: 18px;
+      height: 100%;
+      margin: 0px 0px 5px;
+      padding-top: 10px;
+      padding-right: 10px;
+      font-family: "Flame-Regular";
+      text-transform: capitalize;
+      font-size: 18px;
+      color: #502314;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    &--price {
+      display: flex;
+      justify-content: baseline;
+      line-height: 22px;
+      margin: 0px 0px 5px;
+      font-family: "Flame-Regular";
+      text-transform: capitalize;
+      text-align: left;
+
+      &-discounted {
+        color: #d72300;
+        font-size: 16px;
+      }
+      &-fixed {
+        color: #502314;
+        font-size: 16px;
+      }
+
+      &-original {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #9f816f;
+        margin-left: 5px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap");
+@import "react-image-gallery/styles/scss/image-gallery.scss";
+@import "../src/assets/scss/home.scss";
+@import "../src/assets/scss/product.scss";
+@import "../src/assets/scss/largeOrder.scss";
+@import "../src/assets/scss/footer.scss";
+@font-face {
+  font-family: "Flame-Regular";
+  src: local("FlameRegular"), url("../src/assets/fonts/FlameRegular.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Flame-Sans";
+  src: local("FlameSans"), url("../src/assets/fonts/FlameSans.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Flame-Bold";
+  src: local("FlameBold"), url("../src/assets/fonts/FlameBold.otf") format("opentype");
+  font-weight: normal;
+}
