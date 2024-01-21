@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import CardMenus from "../components/CardMenus";
 import { homeMenus } from "../libs/menus";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Home = () => {
   const [menus, setMenus] = useState(homeMenus);
+  const isPhoneScreens = useMediaQuery("(max-width: 766px)");
 
   const images = [
     {
@@ -23,20 +25,31 @@ const Home = () => {
   return (
     <div>
       <ImageGallery items={images} />
-      <div className="home">
-        <div className="home__beforelogin">
-          <p>
-            Get exclusive benefits now as a BK Member! <img src="https://bkdelivery.co.id/static/website/img/crown1x.4a9100c3c538.png" alt="king" />{" "}
-          </p>
-          <button>Login</button>
+      {isPhoneScreens ? (
+        <div className="home">
+          <div className="home__beforelogin">
+            <p>
+              Get exclusive benefits now as a BK Member! <img src="https://bkdelivery.co.id/static/website/img/crown1x.4a9100c3c538.png" alt="king" />{" "}
+            </p>
+            <button>Login</button>
+          </div>
+          <p className="home__title">Our Menus</p>
+          <div className="home__menu">
+            {menus.map((menus) => (
+              <CardMenus key={menus.id} img={menus.img} title={menus.title} alt={menus.alt} />
+            ))}
+          </div>
         </div>
-        <p className="home__title">Our Menus</p>
-        <div className="home__menu">
-          {menus.map((menus) => (
-            <CardMenus key={menus.id} img={menus.img} title={menus.title} alt={menus.alt} />
-          ))}
+      ) : (
+        <div className="home">
+          <p className="home__title">Our Menus</p>
+          <div className="home__menu">
+            {menus.map((menus) => (
+              <CardMenus key={menus.id} img={menus.img} title={menus.title} alt={menus.alt} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

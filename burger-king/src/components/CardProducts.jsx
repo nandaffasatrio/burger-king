@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { allProducts } from "../libs/allProducts";
 
-const CardProducts = ({ id, title, img, alt, price, priceNow, priceThen }) => {
+const CardProducts = ({ id, title, img, alt, price, priceNow, priceThen, slug }) => {
   const imgProducts = new URL(`${img}`, import.meta.url).href;
 
   return (
-    <Link to={`/productdetail/${allProducts.id}`}>
+    <Link onClick="window.scrollTo(0, 0)" to={slug}>
       <div className="product__card">
         {alt ? <img src={`${imgProducts}`} alt={alt} /> : null}
         <div className="product__card--title">

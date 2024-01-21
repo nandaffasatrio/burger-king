@@ -26,7 +26,7 @@ const Navbar = () => {
                 </svg>
               </button>
               <Link to="/" href="/" className="flex items-center">
-                <img src={logoNav} className="w-[40px] " alt="ANB Logo" />
+                <img src={logoNav} className="w-[40px] " alt="bk Logo" />
               </Link>
               <Link>
                 <div className="relative w-[52px] h-[50px] bg-[#ed7801]">
@@ -51,36 +51,36 @@ const Navbar = () => {
                   </div>
                 </Link>
               </div>
-              <div className="absolute mt-5 top-3 z-[100] left-0 w-full md:block md:w-auto" id="navbar-default">
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 h-[600px] md:flex-row md:space-x-8 md:mt-0 md:border-0 m bg-[#2d2d2d]">
-                  <li>
-                    <Link to="/" className="block py-2 mx-auto text-gray-400 rounded text-left  md:border-0 md:p-0   hover:bg-gray-700 hover:text-white " aria-current="page">
+              <div className="overlay" id="navbar-default">
+                <ul className="overlay__open">
+                  <li className="overlay__open--link">
+                    <Link to="/" className="" aria-current="page">
                       <button onClick={handleCloseMenuToggle} className="w-full">
                         Home
                       </button>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/products" className="block py-2 mx-auto text-gray-400 rounded  md:border-0 md:p-0   hover:bg-gray-700 hover:text-white ">
+                    <Link to="/products" className="overlay__open--link">
                       <button onClick={handleCloseMenuToggle} className="w-full">
-                        <div className="span">Delivery</div>
-                        <div className="span">Order</div>
+                        <div>Delivery</div>
+                        Order
                       </button>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/promotions" className="block py-2 mx-auto text-gray-400 rounded  md:border-0 md:p-0   hover:bg-gray-700 hover:text-white ">
+                    <Link to="/promotions" className="overlay__open--link">
                       <button onClick={handleCloseMenuToggle} className="w-full">
-                        <div className="span">Get Fresh</div>
-                        <div className="span">Promotion</div>
+                        <div>Get Fresh</div>
+                        Promotion
                       </button>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/LargeOrder" className="block py-2 mx-auto text-gray-400 rounded  md:border-0 md:p-0   hover:bg-gray-700 hover:text-white ">
+                    <Link to="/LargeOrder" className="overlay__open--link">
                       <button onClick={handleCloseMenuToggle} className="w-full">
-                        <div className="span">Exclusive</div>
-                        <div className="span">Large Order</div>
+                        <div>Exclusive</div>
+                        Large Order
                       </button>
                     </Link>
                   </li>
@@ -91,14 +91,32 @@ const Navbar = () => {
         )
       ) : (
         <div>
-          <nav className="flex flex-wrap justify-center items-center z-[100] h-[90px] border-gray-200 px-4 py-2.5 bg-[#1F2937]">
-            <div className="flex flex-wrap justify-between items-center mx-auto ">
-              <Link to="/" href="/" className="flex items-center">
-                <img src={logoNav} className="mr-3 w-24 " alt="" />
-                <span className="self-center text-xl font-semibold whitespace-nowrap text-white"></span>
-              </Link>
+          <nav className="navbardesk">
+            <div className="flex max-w-[1024px] items-center">
+              <div className="navbardesk__container">
+                <Link to="/">
+                  <img src={logoNav} className="mr-3 w-24 " alt="" />
+                </Link>
+                <Link to="/products" className="navbardesk__container--link">
+                  <h3>Delivery</h3>
+                  <h4>Order</h4>
+                </Link>
+                <Link to="/promotions" className="navbardesk__container--link">
+                  <h3>Get Fresh</h3>
+                  <h4>Promotions</h4>
+                </Link>
+                <Link to="/largeorder" className="navbardesk__container--link">
+                  <h3>Exclusive</h3>
+                  <h4>Large Order</h4>
+                </Link>
+              </div>
+              <div className="navbardesk__right">
+                <div className="navbardesk__right--login">
+                  <h3>Login</h3>
+                  <img className="w-[30px]" src={cartNav} alt="shopping cart" />
+                </div>
+              </div>
             </div>
-            <div className=""></div>
           </nav>
         </div>
       )}
